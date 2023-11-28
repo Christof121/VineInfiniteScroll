@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Vine Viewer Preload test
+// @name         Vine Infinite Scroll
 // @namespace    http://tampermonkey.net/
 // @version      1
 // @description  Erweiterung der Produkt Übersicht von Amazon Vine
