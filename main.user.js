@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Vine Infinite Scroll
 // @namespace    http://tampermonkey.net/
-// @version      1
+// @version      1.1
 // @description  Erweiterung der Produkt Übersicht von Amazon Vine
 // @author       Christof
 // @match        *://www.amazon.de/vine/*
@@ -16,9 +16,9 @@
 
 (async function() {
     'use strict';
-    // Holen Sie sich den Link aus productInfo.Link
-    var url = "https://www.amazon.de/vine/vine-items?queue=encore&pn=&cn=";
-    var page = 2;
+    var currentURL = window.location.href;
+    var url = new URL(currentURL);
+    var page = url.searchParams.get("page");
     var nextPage;
     var maxPage;
     var allowPreload = true;
@@ -28,6 +28,10 @@
         await preload();
     }
     function startup(){
+        if (!page){
+            page = 1;
+        }
+        page++;
         getMaxPage();
         addSearchBar();
         addLoadAll();
@@ -62,7 +66,8 @@
     function preload(){// Führen Sie eine GM.xmlHttpRequest aus, um die Seite aufzurufen
         return new Promise(function(resolve, reject) {
             if(allowPreload){
-                var itemsurl = url + "&page=" + page;
+                url.searchParams.set("page", page);
+                var itemsurl = url.toString();
                 console.log(itemsurl);
                 GM.xmlHttpRequest({
                     method: "GET",
