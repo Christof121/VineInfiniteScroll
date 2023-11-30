@@ -1,8 +1,10 @@
 // ==UserScript==
 // @name         Vine Infinite Scroll
 // @namespace    http://tampermonkey.net/
-// @version      1.1
-// @description  Erweiterung der Produkt Übersicht von Amazon Vine
+// @version      1.2
+// @updateURL    https://raw.githubusercontent.com/Christof121/VineInfiniteScroll/main/main.user.js
+// @downloadURL  https://raw.githubusercontent.com/Christof121/VineInfiniteScroll/main/main.user.js
+// @description  Laden weiterer Produkte beim Scrollen
 // @author       Christof
 // @match        *://www.amazon.de/vine/*
 // @match        *://amazon.de/vine/*
