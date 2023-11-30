@@ -146,7 +146,7 @@
         searchBarContainer.style.margin = "0.385em";
 
         var searchBarInput = document.createElement('input');
-        searchBarInput.type = "text";
+        searchBarInput.type = "search";
         searchBarInput. placeholder = "Suche"
 
         var searchBarButton = document.createElement('button');
@@ -158,7 +158,7 @@
         searchBarContainer.appendChild(searchBarInput);
         searchBarContainer.appendChild(searchBarButton);
 
-        searchBarInput.addEventListener("keyup", function(event) {
+        searchBarInput.addEventListener("keyup touchup", function(event) {
             if (event.keyCode === 13) {
                 // Wenn die Enter-Taste gedrückt wurde, Button klicken
                 search();
