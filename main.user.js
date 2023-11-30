@@ -158,7 +158,7 @@
         searchBarContainer.appendChild(searchBarInput);
         searchBarContainer.appendChild(searchBarButton);
 
-        searchBarInput.addEventListener("keyup touchup", function(event) {
+        searchBarInput.addEventListener("keyup touchend", function(event) {
             if (event.keyCode === 13) {
                 // Wenn die Enter-Taste gedrückt wurde, Button klicken
                 search();
